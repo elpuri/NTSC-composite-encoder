@@ -137,7 +137,7 @@ begin
 	-- of the sine wave would be 1 / 2^18 / f(sys_cycle) ~= 190.734863281 Hz
 	-- Thus to get f(ntsc) we need to increment by 3579545Hz / 190.734863281 Hz = 18767
 	-- Note that it's very important that the color carrier keeps running freely. The phase must
-	-- NOT be never be reset or the TV won't be able to lock into the color carrier.
+	-- never be reset or the TV won't be able to lock into the color carrier.
 	color_carrier_phase_next <= color_carrier_phase + 18767;
 	color_carrier_phase_modulated <= color_carrier_phase(17 downto 10) + color_carrier_phase_modulator;
 	
